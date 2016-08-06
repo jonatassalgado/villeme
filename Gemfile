@@ -16,6 +16,7 @@ group :development, :test do
 	gem 'bullet'
 	gem 'sitemap_generator'
 	gem 'byebug'
+	gem 'chromedriver-helper'
 end
 
 group :test do

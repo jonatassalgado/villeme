@@ -13,7 +13,7 @@ describe 'Request an invite', js: true do
     it 'should request a invite with success' do
       visit '/en'
 
-      find('.Button.hidden-xs').click
+      page.find('.Button--callToAction').click
 
       within '#new-invite' do
         fill_in 'invite[name]', with: 'John Doe'
@@ -23,6 +23,8 @@ describe 'Request an invite', js: true do
         sleep 5
         click_button 'Confirm'
       end
+
+      sleep 3
 
       expect(page).to have_content(I18n.t('invite_create.valid', user_name: 'John'))
     end
